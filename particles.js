@@ -17,8 +17,8 @@ class Particle {
         this.x = Math.random() * canvas.width;
         this.y = Math.random() * canvas.height;
         this.size = Math.random() * 50 + 20; // Размер стикеров
-        this.speedX = Math.random() * 0.5 - 0.25;
-        this.speedY = Math.random() * 0.5 - 0.25;
+        this.speedX = (Math.random() * 0.5 - 0.25) * 2; // Удвоенная скорость по X
+        this.speedY = (Math.random() * 0.5 - 0.25) * 2; // Удвоенная скорость по Y
     }
 
     update() {
@@ -39,7 +39,7 @@ class Particle {
 }
 
 function initParticles() {
-    for (let i = 0; i < 50; i++) {
+    for (let i = 0; i < 10; i++) { // Уменьшено количество частиц
         particles.push(new Particle());
     }
 }
