@@ -1,0 +1,86 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body, html {
+    width: 100%;
+    height: 100%;
+    font-family: Arial, sans-serif;
+    background-color: #eaeaea; /* Light background */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    position: relative;
+}
+
+.fabric-background {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background: radial-gradient(circle, rgba(255, 255, 255, 0.5), #fff); /* Light spotlight */
+    opacity: 0.5;
+    animation: wave 8s ease-in-out infinite;
+    z-index: -2;
+}
+
+@keyframes wave {
+    0%, 100% {
+        transform: perspective(1000px) rotateX(5deg) rotateY(-10deg) translateZ(0);
+    }
+    50% {
+        transform: perspective(1000px) rotateX(5deg) rotateY(10deg) translateZ(10px);
+    }
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+    width: 90%;
+    max-width: 500px;
+    text-align: center;
+    z-index: 1;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+h1, p {
+    color: black; /* Text color */
+    font-weight: normal;
+    font-size: 1.8rem;
+    margin-bottom: 20px;
+}
+
+p {
+    font-size: 1rem;
+    color: #333;
+}
+
+.button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    color: white; /* Белый текст для контраста */
+    font-size: 1.2rem;
+    text-decoration: none;
+    background-color: #006400; /* Темно-зеленый */
+    border-radius: 12px;
+    transition: transform 0.3s ease, background-color 0.3s ease;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    max-width: 200px;
+}
+
+.button:hover {
+    transform: scale(1.05);
+    background-color: #004d00; /* Более темный зеленый при наведении */
+}
